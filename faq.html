@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>FAQ - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Frequently asked questions, common troubleshooting, and operational guidance for ASOC Client Dashboard.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">FAQ</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link active">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          Help & Reference
+        </div>
+
+        <h1 class="page-title">Frequently Asked Questions (FAQ)</h1>
+        <p class="lead-paragraph">
+          Find quick answers to common operational questions, account policies, and dashboard troubleshooting scenarios.
+        </p>
+
+        <!-- Section: Session & Login FAQ -->
+        <section id="session-faq" class="doc-section">
+          <h2 class="section-h2">Session & Account Inquiries</h2>
+
+          <div class="faq-accordion">
+            <details class="faq-item" open>
+              <summary class="faq-summary">
+                <span>Why was my session automatically logged out?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                Automatic logout occurs due to two security mechanisms:
+                <br><br>
+                1. <strong>Inactivity Timeout:</strong> The platform terminates any idle session after 15 consecutive minutes of inactivity (no mouse motion, keypresses, or scrolling) to prevent unauthorized access on unattended workstations.
+                <br>
+                2. <strong>Single Active Session:</strong> If your account credentials are used to sign in from another browser window, tab, or computer, the system immediately revokes the prior active session.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>What are the password validation rules when resetting my password?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                To guarantee account integrity, newly created passwords must fulfill the following policies:
+                <ul>
+                  <li>Minimum length of at least <strong>6 characters</strong>.</li>
+                  <li>Must contain both <strong>uppercase letters (A-Z)</strong> and <strong>lowercase letters (a-z)</strong>.</li>
+                  <li>The new password cannot be identical to the current password.</li>
+                  <li>Confirmation password field must match the new password exactly.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- Section: Dashboard & Data FAQ -->
+        <section id="data-faq" class="doc-section">
+          <h2 class="section-h2">Dashboard Data & Filters</h2>
+
+          <div class="faq-accordion">
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>What is the difference between Mode Alerts and Mode Incidents?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                <strong>Mode Alerts</strong> displays raw individual log events in strict chronological order, which is optimal for forensic timelines. 
+                <br><br>
+                <strong>Mode Incidents</strong> intelligently clusters repetitive events sharing the same <code>(Rule ID, Agent ID, Source IP, Date)</code> into a single consolidated row with a <strong>Count</strong> frequency indicator. This reduces alert fatigue by up to 90% while preserving attack severity visibility.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>How can I filter data for custom or historical date ranges?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                Click on the time range filter in the header bar and select <strong>Custom</strong>. A calendar modal will open allowing you to specify exact Start Date and End Date boundaries, or choose quick presets such as <em>Last 7 Days</em>, <em>Last 14 Days</em>, or <em>Last 30 Days</em>.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>What should I do if an endpoint agent displays Offline status?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                An offline indicator signifies that the endpoint agent has ceased communication with the server. Verify:
+                <ul>
+                  <li>Whether the target physical or virtual host is powered off or rebooting.</li>
+                  <li>Whether local network or outbound firewall rules permit agent communication.</li>
+                  <li>Whether the Wazuh agent background service is actively running on the endpoint.</li>
+                  <li>Inspect the <em>Last Seen</em> timestamp column in the Devices table to determine when connectivity was lost.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>How can I export and print official incident reports as PDF?</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="faq-content">
+                Navigate to the <strong>Reports</strong> module, select a report row to view the detail drawer, and click <strong>"Read Full Report"</strong>. In the full report modal, click the <strong>"Download PDF"</strong> button. The browser print interface will open pre-configured with professional A4 portrait layout ready to save or print.
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="risk-score-formula.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Risk Score Formula
+            </span>
+          </a>
+
+          <a href="index.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Back to Top</span>
+            <span class="pagination-title">
+              Introduction
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#session-faq" class="toc-link active">Session & Account Inquiries</a></li>
+          <li><a href="#data-faq" class="toc-link">Dashboard Data & Filters</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. timeout, alerts, PDF)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

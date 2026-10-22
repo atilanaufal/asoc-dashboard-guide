@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Header - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Guideline for using the header bar, navigation controls, time range filter, real-time clock, account profile, password reset, and logout.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Header</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link active">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Get Started
+        </div>
+
+        <h1 class="page-title">Header</h1>
+        <p class="lead-paragraph">
+          The header component resides at the top of the ASOC Client Dashboard interface, functioning as the primary navigation bar and offering immediate access to global observation intervals, profile credentials, and security controls.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/header/header-bar.png" alt="ASOC Dashboard Header Bar Overview" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: Top Header Bar Overview</div>
+        </div>
+
+        <!-- Section 3.1 -->
+        <section id="time-filter" class="doc-section">
+          <h2 class="section-h2">3.1. Time Range Filter</h2>
+          <p>
+            The time range filter enables analysts to configure the specific temporal observation window used to populate security telemetry across all dashboard cards and tables.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/time-range-filter.png" alt="Time Range Filter Dropdown Menu" class="doc-image" loading="lazy" style="max-height: 260px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Time Range Filter Dropdown Presets</div>
+            </div>
+
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/custom-time-range.png" alt="Custom Date Range Filter Modal" class="doc-image" loading="lazy" style="max-height: 260px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Custom Calendar Range Picker Modal</div>
+            </div>
+          </div>
+
+          <ul>
+            <li><strong>Today:</strong> Restricts incident logs to events detected within the rolling 24 hours of the active calendar day.</li>
+            <li><strong>This Week:</strong> Filters data commencing from Monday of the current active calendar week through the present moment.</li>
+            <li><strong>This Month:</strong> Restricts data from the 1st day of the active calendar month through the present date.</li>
+            <li><strong>Custom:</strong> Opens an interactive calendar modal to select exact <em>Start Date</em> and <em>End Date</em> boundaries. Features quick shortcut presets (<em>Today</em>, <em>Last 7 Days</em>, <em>Last 14 Days</em>, <em>Last 30 Days</em>, and <em>This Month</em>).</li>
+          </ul>
+        </section>
+
+        <!-- Section 3.2 -->
+        <section id="operational-clock" class="doc-section">
+          <h2 class="section-h2">3.2. Real-Time Operational Clock</h2>
+          <p>
+            Displays a real-time synchronized clock in the header bar in 24-hour format, assisting security teams with accurate forensic event timekeeping during active triage.
+          </p>
+
+          <div class="doc-image-container" style="max-width: 320px;">
+            <img src="assets/images/screenshots/header/live-clock.png" alt="Real-Time Synchronized Clock Indicator" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: 24-Hour Real-Time Clock Display</div>
+          </div>
+        </section>
+
+        <!-- Section 3.3 -->
+        <section id="account-profile" class="doc-section">
+          <h2 class="section-h2">3.3. Account Profile</h2>
+          <p>
+            Shows active profile identity attributes, displaying the registered institution or university name alongside the active authenticated account handle (<code>@username</code>).
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/account-data.png" alt="Header Account Identity Data" class="doc-image" loading="lazy" style="max-height: 140px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Organization & Username Header Indicator</div>
+            </div>
+
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/profile-dropdown.png" alt="Profile Dropdown Menu Details" class="doc-image" loading="lazy" style="max-height: 240px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Account Profile Card & Management Options</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3.4 -->
+        <section id="reset-password" class="doc-section">
+          <h2 class="section-h2">3.4. Password Reset Menu</h2>
+          <p>
+            Enables users to update account passwords upon receiving newly provisioned credentials or periodically to preserve account hygiene.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/reset-password-button.png" alt="Reset Password Button in Profile Menu" class="doc-image" loading="lazy" style="max-height: 120px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Reset Password Trigger in Profile Menu</div>
+            </div>
+
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/header/reset-password-modal.png" alt="Reset Password Form Modal" class="doc-image" loading="lazy" style="max-height: 320px; object-fit: contain;">
+              <div class="doc-image-caption">Figure: Reset Password Modal Dialog</div>
+            </div>
+          </div>
+
+          <h3 class="section-h3">Step-by-Step Instructions:</h3>
+          <ol class="step-list">
+            <li class="step-item">
+              <div class="step-title">Open Profile Dropdown</div>
+              <p>Click your profile avatar located at the top-right corner of the header bar.</p>
+            </li>
+            <li class="step-item">
+              <div class="step-title">Select Reset Password</div>
+              <p>Click on the <strong>Reset Password</strong> option from the dropdown menu.</p>
+            </li>
+            <li class="step-item">
+              <div class="step-title">Complete Credential Form</div>
+              <p>Enter your <strong>Current Password</strong>, followed by your <strong>New Password</strong> and <strong>Confirm New Password</strong>.</p>
+            </li>
+            <li class="step-item">
+              <div class="step-title">Save Changes</div>
+              <p>Click the <strong>Simpan Password (Save Password)</strong> button to commit the update.</p>
+            </li>
+          </ol>
+
+          <div class="callout callout-warning">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div class="callout-body">
+              <p><strong>Password Policy & Validation Rules:</strong></p>
+              <ul style="margin-bottom: 0; padding-left: 1.25rem;">
+                <li><strong>Minimum Length:</strong> Must consist of at least <strong>6 characters</strong>.</li>
+                <li><strong>Required Character Combination:</strong> Must combine both <strong>uppercase letters (A-Z)</strong> and <strong>lowercase letters (a-z)</strong>.</li>
+                <li><strong>Identity Constraint:</strong> The new password cannot match the existing password, and confirmation must match identically.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3.5 -->
+        <section id="logout" class="doc-section">
+          <h2 class="section-h2">3.5. Logout Button</h2>
+          <p>
+            Safely terminates the active user session, clears authentication cookies, revokes the security session token, and returns the browser to the login screen.
+          </p>
+
+          <div class="doc-image-container" style="max-width: 360px;">
+            <img src="assets/images/screenshots/header/logout-menu.png" alt="Logout Button in Profile Menu" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Logout Action in Profile Dropdown</div>
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="authentication.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Authentication & Security
+            </span>
+          </a>
+
+          <a href="dashboard.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Dashboard
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#time-filter" class="toc-link active">3.1. Time Range Filter</a></li>
+          <li><a href="#operational-clock" class="toc-link">3.2. Operational Clock</a></li>
+          <li><a href="#account-profile" class="toc-link">3.3. Account Profile</a></li>
+          <li><a href="#reset-password" class="toc-link">3.4. Password Reset Menu</a></li>
+          <li><a href="#logout" class="toc-link">3.5. Logout Button</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. filter, password, profile)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

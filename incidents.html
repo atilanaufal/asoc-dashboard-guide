@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Incidents - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Guideline for reviewing security alerts, switching between Alerts and Incidents mode, inspecting raw JSON logs, and MITRE ATT&CK mapping.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Incidents</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link active">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Dashboard Modules
+        </div>
+
+        <h1 class="page-title">Incidents</h1>
+        <p class="lead-paragraph">
+          The Incidents page aggregates and displays security alerts triggered by detection rules. It allows analysts to review identified malicious activities, examine payload characteristics, and identify critical events warranting formal response.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/incidents/incidents-overview.png" alt="Incidents Page Interface Overview" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: Incidents Module Main Overview</div>
+        </div>
+
+        <!-- Section 6.1 -->
+        <section id="group-by-selector" class="doc-section">
+          <h2 class="section-h2">6.1. Mode Group By Selector</h2>
+          <p>
+            The system provides two view modes to accommodate both high-level operational triage and deep forensic dissection:
+          </p>
+
+          <h3 class="section-h3">1. Mode Alerts</h3>
+          <p>
+            Displays each individual log detection record strictly according to chronological appearance. The table exposes <strong>4 columns</strong>: <code>Alert Name</code>, <code>Severity</code>, <code>Agent</code>, and <code>First Observed</code>. This mode is optimal for second-by-second timeline reconstruction during live forensic reviews.
+          </p>
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/incidents/group-by-alerts.png" alt="Mode Alerts Table" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Mode Alerts view displaying individual sequential log events</div>
+          </div>
+
+          <h3 class="section-h3">2. Mode Incidents (Operational Recommendation)</h3>
+          <p>
+            Intelligently aggregates repetitive log events sharing identical <code>(Rule ID, Agent ID, Source IP, Date)</code> parameters into a single consolidated row. The table exposes <strong>6 columns</strong>: <code>Incident Name</code>, <code>Severity</code>, <code>Agent</code>, <code>Count</code>, <code>First Observed</code>, and <code>Last Observed</code>. This mode significantly mitigates analyst alert fatigue without losing occurrence frequency.
+          </p>
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/incidents/group-by-incidents.png" alt="Mode Incidents Grouped View" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Mode Incidents view featuring grouped detection counts</div>
+          </div>
+        </section>
+
+        <!-- Section 6.2 -->
+        <section id="search-filter" class="doc-section">
+          <h2 class="section-h2">6.2. Search & Advanced Filter Controls</h2>
+          <ul>
+            <li><strong>Quick Search Bar:</strong> Free-text search matching detection rule names, agent hostnames, IP addresses, or alert narratives.</li>
+            <li><strong>Advanced Filter Modal:</strong> Precise granular filtering.</li>
+          </ul>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/incidents/filter-incidents.png" alt="Advanced Filter Criteria Modal" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Advanced multi-criteria filtering modal for incidents</div>
+          </div>
+
+          <ul>
+            <li><strong>Severity:</strong> Filter by urgency tier (<em>Critical</em>, <em>High</em>, <em>Medium</em>, or <em>Low</em>).</li>
+            <li><strong>Incident Type / Category:</strong> Filter by threat vector (e.g., <em>Authentication Failure</em>, <em>Malware</em>, <em>Web Attack</em>, <em>System Modification</em>).</li>
+            <li><strong>Agent Affected:</strong> Isolate alerts originating from specific host machines.</li>
+            <li><strong>IP Source:</strong> Restrict alerts by specific external or internal adversary IP addresses.</li>
+            <li><strong>Count:</strong> Filter incident rows based on repetition volume (active exclusively within <em>Mode Incidents</em>).</li>
+          </ul>
+        </section>
+
+        <!-- Section 6.3 -->
+        <section id="incident-detail" class="doc-section">
+          <h2 class="section-h2">6.3. Incident Detail Drawer</h2>
+          <p>
+            Clicking any incident row triggers an in-depth slide-out drawer containing:
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/incidents/incident-details.png" alt="Incident Detail Drawer" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Detailed incident drawer showing MITRE ATT&CK mapping</div>
+          </div>
+
+          <ul>
+            <li><strong>Affected Agent & Hostname:</strong> Target endpoint machine identifier.</li>
+            <li><strong>Agent ID & Agent IP:</strong> Wazuh enrollment ID and host network address.</li>
+            <li><strong>Rule ID & Incident Type:</strong> Signature rule identifier and category classification badge.</li>
+            <li><strong>Count, Severity & IP Source:</strong> Detection frequency, urgency rating, and attacker source IP (when captured).</li>
+            <li><strong>Description:</strong> Narrative technical explanation of the triggered rule logic.</li>
+            <li><strong>Source File:</strong> Operating system log path or binary location triggering the detection (e.g., <code>/var/log/auth.log</code>).</li>
+            <li><strong>MITRE ATT&CK:</strong> Standardized adversary tactic and technique classification.</li>
+            <li><strong>First Observed & Last Observed:</strong> Timestamps of initial detection and latest recurrence.</li>
+            <li><strong>"View Full Log" Button:</strong> Action button opening the raw structured JSON log viewer.</li>
+          </ul>
+        </section>
+
+        <!-- Section 6.4 -->
+        <section id="full-logs" class="doc-section">
+          <h2 class="section-h2">6.4. Full Logs Modal</h2>
+          <p>
+            Opens an inspection modal rendering raw log telemetry in native structured JSON format:
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/incidents/full-log-incidents.png" alt="Full JSON Logs Inspection Modal" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Structured JSON raw log viewer modal</div>
+          </div>
+
+          <ul>
+            <li><strong>In-Log Search:</strong> Rapid text filter bar to locate specific JSON key-value pairs or substrings instantly.</li>
+            <li><strong>Structured JSON:</strong> Clean syntax-formatted payload inspection.</li>
+            <li><strong>Copy:</strong> Copies complete raw log text directly to the clipboard.</li>
+            <li><strong>Download:</strong> Saves the raw log artifact locally as a <code>.json</code> file for forensic archive.</li>
+          </ul>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="devices.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Devices
+            </span>
+          </a>
+
+          <a href="vulnerabilities.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Vulnerabilities
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#group-by-selector" class="toc-link active">6.1. Mode Group By</a></li>
+          <li><a href="#search-filter" class="toc-link">6.2. Search & Filter</a></li>
+          <li><a href="#incident-detail" class="toc-link">6.3. Incident Detail</a></li>
+          <li><a href="#full-logs" class="toc-link">6.4. Full Logs Modal</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. alerts, incidents, MITRE)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

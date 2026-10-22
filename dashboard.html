@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Overview and usage guide for the ASOC Client Dashboard: Total Severity, Risk Score, Top 5 Incidents, and Recommended Actions.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Dashboard</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link active">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard Modules
+        </div>
+
+        <h1 class="page-title">Dashboard</h1>
+        <p class="lead-paragraph">
+          This primary overview page presents a comprehensive synopsis of your infrastructure's security posture. It enables analysts and IT administrators to rapidly comprehend active threats, gauge potential impact levels, and establish mitigation priorities based on real-time data visualizations.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/dashboard/dashboard-overview.png" alt="ASOC Dashboard Main View" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: ASOC Client Dashboard Main Interface Overview</div>
+        </div>
+
+        <!-- Section 4.1 -->
+        <section id="total-severity" class="doc-section">
+          <h2 class="section-h2">4.1. Total Severity Widget</h2>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/dashboard/incident-kpi-widget.png" alt="Total Severity KPI Cards" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Severity Breakdown and KPI Indicators</div>
+          </div>
+
+          <ul>
+            <li>
+              <strong>Donut Chart:</strong> Visualizes the proportional volume of incidents classified across 3 severity levels:
+              <ul style="margin-top: 0.5rem;">
+                <li><span class="badge-severity badge-critical">Critical</span> (Red): Severe security emergencies requiring immediate containment and remediation.</li>
+                <li><span class="badge-severity badge-high">High</span> (Orange): High-impact suspicious activities or unauthorized privilege escalations.</li>
+                <li><span class="badge-severity badge-medium">Medium</span> (Blue): Moderate anomalies and recurring reconnaissance events.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Previous Period Comparison:</strong> Provides trend analysis against baseline intervals (dynamic labels: <code>YESTERDAY</code> for Today filter, <code>LAST WEEK</code> for This Week filter, or <code>LAST MONTH</code> for This Month filter), featuring percentage trends and absolute variance badges (+X / -X).
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 4.2 -->
+        <section id="risk-score-overview" class="doc-section">
+          <h2 class="section-h2">4.2. Risk Score Widget</h2>
+          <p>
+            The <strong>Risk Score Widget</strong> reflects an institutional security risk index ranging from <strong>0 to 100</strong>. It incorporates a dedicated <strong>Formula</strong> action button in the upper-right corner that launches the mathematical calculation modal.
+          </p>
+
+          <div class="callout">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="callout-body">
+              <p><strong>Complete Formula Details:</strong></p>
+              <p>
+                In-depth mathematical explanations, Wazuh rule severity weight matrices, categorical risk thresholds (Low, Moderate, Elevated, High, Critical), and a complete 4-host calculation simulation are detailed in the dedicated reference section:
+              </p>
+              <p style="margin-top: 0.75rem;">
+                <a href="risk-score-formula.html" class="btn-dashboard-back" style="display: inline-flex; font-size: 0.82rem; padding: 0.4rem 0.85rem;">
+                  <span>Open Risk Score Formula Page</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4.3 -->
+        <section id="top-incidents" class="doc-section">
+          <h2 class="section-h2">4.3. Top 5 Incidents Widget</h2>
+          <p>
+            Displays the 5 most urgent incident events requiring administrative triage within the designated time window.
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/dashboard/top-incidents.png" alt="Top 5 Incidents Widget" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Top 5 Urgent Incidents Widget</div>
+          </div>
+
+          <ul>
+            <li>
+              <strong>Priority Sorting Criteria:</strong>
+              <ol style="margin-top: 0.4rem; padding-left: 1.25rem;">
+                <li>Severity Tier (<em>Critical</em> takes precedence over <em>High</em>, followed by <em>Medium</em>).</li>
+                <li>Highest Occurrence Frequency (Detection Count).</li>
+                <li>Most Recent Observation Timestamp.</li>
+              </ol>
+            </li>
+            <li><strong>Severity Dropdown Filter:</strong> Filters the Top 5 list dynamically by <em>All Severity</em>, <em>Critical</em>, <em>High</em>, or <em>Medium</em>.</li>
+            <li><strong>Agent Host Link:</strong> Clicking an agent's hostname automatically redirects the analyst to the Devices module with an active search filter on that specific host.</li>
+            <li><strong>View Action Button:</strong> Clicking the <strong>View</strong> button on any incident row transitions directly to the <strong>Incidents</strong> module with pre-applied filters matching incident title, agent name, and grouped detection counts.</li>
+          </ul>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/dashboard/view-incidents-from-top-incidents.png" alt="Automated Transition to Incidents Module" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Automated filter state on Incidents page via Top 5 View button</div>
+          </div>
+        </section>
+
+        <!-- Section 4.4 -->
+        <section id="recommended-actions" class="doc-section">
+          <h2 class="section-h2">4.4. Recommended Actions</h2>
+          <p>
+            Presents immediate remediation guidance extracted directly from open, active investigation cases.
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/dashboard/reports-view-recommended-action.png" alt="Recommended Actions List" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Recommended actions list linking directly to formal investigation reports</div>
+          </div>
+
+          <ul>
+            <li>Each action entry provides an urgency severity badge, concise remediation directives, publication date, tenant identifier, and linked case reference.</li>
+            <li><strong>"View Report" Button:</strong> Navigates to the corresponding forensic report within the <strong>Reports</strong> module to review comprehensive technical steps and affected asset lists.</li>
+          </ul>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="header.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Header
+            </span>
+          </a>
+
+          <a href="devices.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Devices
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#total-severity" class="toc-link active">4.1. Total Severity Widget</a></li>
+          <li><a href="#risk-score-overview" class="toc-link">4.2. Risk Score Widget</a></li>
+          <li><a href="#top-incidents" class="toc-link">4.3. Top 5 Incidents</a></li>
+          <li><a href="#recommended-actions" class="toc-link">4.4. Recommended Actions</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. severity, top incidents)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

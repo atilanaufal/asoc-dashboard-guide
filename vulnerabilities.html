@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vulnerabilities - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Guideline for reviewing software vulnerabilities, CVE tracking, patch verification status, and package detail drawers.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Vulnerabilities</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link active">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          Dashboard Modules
+        </div>
+
+        <h1 class="page-title">Vulnerabilities</h1>
+        <p class="lead-paragraph">
+          The Vulnerabilities module catalogs software vulnerabilities detected across monitored systems. This exposure index assists security engineers in evaluating software flaw severity and expediting necessary patch remediation.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/vulnerabilities/vulnerabilities-overview.png" alt="Vulnerabilities Inventory Main View" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: Vulnerabilities Inventory Module Interface</div>
+        </div>
+
+        <!-- Section 7.1 -->
+        <section id="vuln-metrics" class="doc-section">
+          <h2 class="section-h2">7.1. Vulnerability Metrics</h2>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/vulnerabilities/total-vulnerability-widget.png" alt="Total Vulnerability Widget" class="doc-image" loading="lazy">
+              <div class="doc-image-caption">Figure: Total Vulnerability Severity Breakdown</div>
+            </div>
+
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/vulnerabilities/vulnerability-distribution-widget.png" alt="Vulnerability Distribution Widget" class="doc-image" loading="lazy">
+              <div class="doc-image-caption">Figure: CVE Flaw Distribution Chart</div>
+            </div>
+
+            <div class="doc-image-container" style="margin: 0;">
+              <img src="assets/images/screenshots/vulnerabilities/vulnerability-status-widget.png" alt="Vulnerability Status Widget" class="doc-image" loading="lazy">
+              <div class="doc-image-caption">Figure: Active vs Solved Status Cards</div>
+            </div>
+          </div>
+
+          <ul>
+            <li><strong>Total Vulnerability:</strong> Visualizes the severity breakdown alongside absolute finding totals (<em>Critical</em> in red, <em>High</em> in orange, <em>Medium</em> in blue).</li>
+            <li><strong>Vuln Distribution:</strong> Donut visualization mapping the dominant CVE identifiers and categories discovered throughout the infrastructure.</li>
+            <li><strong>Vuln Status:</strong> Two side-by-side remediation metric cards:
+              <ul style="margin-top: 0.4rem;">
+                <li><span class="badge-severity badge-low">Solved</span> (Green card): Total vulnerabilities successfully patched, rescanned, and verified secure.</li>
+                <li><span class="badge-severity badge-critical">Active</span> (Red card): Open software vulnerabilities currently unpatched and awaiting remediation.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 7.2 -->
+        <section id="vuln-search" class="doc-section">
+          <h2 class="section-h2">7.2. Search & Advanced Filter Controls</h2>
+          
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/vulnerabilities/filter-vulnerabilities.png" alt="Vulnerabilities Advanced Filter Modal" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Granular search criteria modal for CVE findings</div>
+          </div>
+
+          <ul>
+            <li><strong>Quick Search:</strong> Instant text matching (<em>Search CVE / Agent / Package</em>) to isolate specific CVE codes, package names, or hostnames.</li>
+            <li><strong>Advanced Filter Modal:</strong> Filters records by <em>Severity</em> (Critical, High, Medium), <em>Status</em> (Active, Solved), <em>Agent</em>, <em>Vulnerability Name</em>, and <em>Category</em>.</li>
+          </ul>
+        </section>
+
+        <!-- Section 7.3 -->
+        <section id="vuln-table" class="doc-section">
+          <h2 class="section-h2">7.3. Vulnerability Inventory Table</h2>
+          
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/vulnerabilities/vulnerability-table.png" alt="Vulnerabilities Inventory Table" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Detailed vulnerability findings catalog table</div>
+          </div>
+
+          <ul>
+            <li><strong>Vulnerability:</strong> Official descriptive title of the software flaw.</li>
+            <li><strong>Severity:</strong> Urgency classification tier (<em>Critical</em>, <em>High</em>, <em>Medium</em>).</li>
+            <li><strong>Status:</strong> Current remediation state (<em>Active</em> or <em>Solved</em>).</li>
+            <li><strong>Agent:</strong> Monitored host endpoint affected by the package flaw.</li>
+            <li><strong>CVE ID:</strong> International standardized vulnerability identifier (e.g., <code>CVE-2024-3094</code>, <code>CVE-2023-4863</code>).</li>
+            <li><strong>Detection Date:</strong> Date and timestamp when the vulnerability was initially identified.</li>
+          </ul>
+        </section>
+
+        <!-- Section 7.4 -->
+        <section id="vuln-detail" class="doc-section">
+          <h2 class="section-h2">7.4. Vulnerability Detail Drawer</h2>
+          <p>
+            Clicking on any vulnerability entry opens a technical side-drawer displaying:
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/vulnerabilities/vulnerability-details.png" alt="Vulnerability Detail Drawer" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Slide-out drawer with detailed CVE technical documentation</div>
+          </div>
+
+          <ul>
+            <li><strong>Vulnerability:</strong> Complete CVE title and advisory headline.</li>
+            <li><strong>Affected Agent:</strong> Affected host machine name.</li>
+            <li><strong>Agent ID & Agent IP:</strong> Two-column grid detailing Wazuh agent registration ID and host IP.</li>
+            <li><strong>Package Version & Category:</strong> Installed software build version when detected (e.g., <code>5.15.0-194.204</code>) alongside category classification (e.g., <code>Package Vulnerability</code>).</li>
+            <li><strong>CVE ID, Severity & Status:</strong> Three-column summary grid with standard CVE badge, urgency level, and resolution status.</li>
+            <li><strong>Description:</strong> Full technical narrative explaining flaw mechanics, impact potential, and vendor remediation paths, equipped with a <strong>Read Full Description / Show Less</strong> toggle.</li>
+            <li><strong>Detection Date:</strong> Timestamp of initial detection.</li>
+          </ul>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="incidents.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Incidents
+            </span>
+          </a>
+
+          <a href="reports.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Reports
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#vuln-metrics" class="toc-link active">7.1. Vulnerability Metrics</a></li>
+          <li><a href="#vuln-search" class="toc-link">7.2. Search & Filter</a></li>
+          <li><a href="#vuln-table" class="toc-link">7.3. Inventory Table</a></li>
+          <li><a href="#vuln-detail" class="toc-link">7.4. Vulnerability Detail</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. CVE, active, solved)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

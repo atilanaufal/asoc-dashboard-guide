@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Reports - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Guideline for formal incident investigation reports managed through DFIR-IRIS, forensic UUID auditing, and PDF export dialogs.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Reports</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link active">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          Dashboard Modules
+        </div>
+
+        <h1 class="page-title">Reports</h1>
+        <p class="lead-paragraph">
+          The Reports module presents official incident case dossiers orchestrated and documented via <strong>DFIR-IRIS</strong>. Users can audit formal case progress, verify compromised assets, and review executive mitigation summaries.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/reports/reports-overview.png" alt="Reports Module Overview" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: Reports Module Interface Overview</div>
+        </div>
+
+        <!-- Section 8.1 -->
+        <section id="report-metrics" class="doc-section">
+          <h2 class="section-h2">8.1. Reports Metrics (Total Reports Card)</h2>
+          
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/total-report-widget.png" alt="Total Reports KPI Card" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Total official investigative reports available for the tenant</div>
+          </div>
+
+          <p>
+            The top summary card reflects the aggregate volume of formal incident reports currently available for the authenticated tenant.
+          </p>
+        </section>
+
+        <!-- Section 8.2 -->
+        <section id="report-search" class="doc-section">
+          <h2 class="section-h2">8.2. Search & Advanced Filter Controls</h2>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/filter-reports.png" alt="Report Severity Filter Controls" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Filter reports by severity urgency level</div>
+          </div>
+
+          <ul>
+            <li><strong>Quick Search:</strong> Search field (<em>Search Reports</em>) matching report headlines, executive summaries, or mitigation text.</li>
+            <li><strong>Severity Filter:</strong> Restricts report rows by urgency tier (<em>Critical</em>, <em>High</em>, <em>Medium</em>).</li>
+          </ul>
+        </section>
+
+        <!-- Section 8.3 -->
+        <section id="report-table" class="doc-section">
+          <h2 class="section-h2">8.3. Reports Table</h2>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/report-table.png" alt="Official Reports Table" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Catalog of official incident investigation documents</div>
+          </div>
+
+          <p>The table displays the following key attributes:</p>
+          <ol style="padding-left: 1.5rem;">
+            <li><strong>Report Name:</strong> Formal title of the forensic incident investigation.</li>
+            <li><strong>Severity:</strong> Urgency classification badge (<em>Critical</em>, <em>High</em>, <em>Medium</em>, <em>Low</em>).</li>
+            <li><strong>Date Generated:</strong> Formal publication timestamp of the verified report.</li>
+          </ol>
+        </section>
+
+        <!-- Section 8.4 -->
+        <section id="report-detail" class="doc-section">
+          <h2 class="section-h2">8.4. Report Detail Drawer</h2>
+          <p>
+            Clicking any report entry opens a technical investigation drawer displaying:
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/detail-report.png" alt="Report Case Detail Drawer" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Investigation case drawer with forensic UUID and action steps</div>
+          </div>
+
+          <ul>
+            <li><strong>Report Name:</strong> Full formal document title.</li>
+            <li><strong>Customer Name:</strong> Registered tenant name (e.g., <em>tenant a</em>).</li>
+            <li><strong>Report UUID:</strong> Globally unique audit identifier for forensic tracking and regulatory compliance.</li>
+            <li><strong>Severity & SOC ID:</strong> Two-column grid with urgency badge and official SOC ticket number (e.g., <code>SOC-2026-001</code> or <em>N/A</em>).</li>
+            <li><strong>Date Generated:</strong> Publication timestamp.</li>
+            <li><strong>Summary:</strong> Executive forensic overview equipped with an expandable <strong>Read More / Show Less</strong> toggle.</li>
+            <li><strong>Recommended Action:</strong> Green-highlighted callout box detailing numbered, concrete mitigation directives for system administrators.</li>
+            <li><strong>Affected Devices:</strong> Inventory of compromised endpoint hosts (showing count, hostnames, and IP addresses).</li>
+            <li><strong>"Read Full Report" Button:</strong> Action button at the drawer base launching the complete Markdown document modal.</li>
+          </ul>
+        </section>
+
+        <!-- Section 8.5 -->
+        <section id="view-full-report" class="doc-section">
+          <h2 class="section-h2">8.5. View Full Report & Download PDF</h2>
+          <p>
+            Renders the full investigative dossier with comprehensive Markdown formatting (headings, subheadings, telemetry tables, and code snippets).
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/report-full.png" alt="Full Investigation Report Modal" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Full forensic report modal view</div>
+          </div>
+
+          <p>
+            <strong>"Download PDF" Button:</strong> Triggers the browser's automated print dialog pre-configured with standardized A4 portrait formatting, ready for archiving as an official <em>Confidential Security Assessment</em> document.
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/reports/full-reports-download-as-pdf.png" alt="A4 PDF Print Dialog" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Automated browser print interface for A4 PDF export</div>
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="vulnerabilities.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Vulnerabilities
+            </span>
+          </a>
+
+          <a href="risk-score-formula.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Risk Score Formula
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#report-metrics" class="toc-link active">8.1. Reports Metrics</a></li>
+          <li><a href="#report-search" class="toc-link">8.2. Search & Filter</a></li>
+          <li><a href="#report-table" class="toc-link">8.3. Reports Table</a></li>
+          <li><a href="#report-detail" class="toc-link">8.4. Report Detail Drawer</a></li>
+          <li><a href="#view-full-report" class="toc-link">8.5. View Full Report (PDF)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. reports, UUID, PDF)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

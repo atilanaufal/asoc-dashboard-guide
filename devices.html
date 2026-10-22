@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Devices - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Guideline for managing monitored endpoints, connection states, operating system breakdown, and hardware specifications.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Devices</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link active">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          Dashboard Modules
+        </div>
+
+        <h1 class="page-title">Devices</h1>
+        <p class="lead-paragraph">
+          The Devices page delivers an exhaustive catalog of monitored endpoint assets. Security personnel can audit connection statuses, hardware capabilities, and operating system distributions to maintain full asset governance across the network.
+        </p>
+
+        <div class="doc-image-container">
+          <img src="assets/images/screenshots/devices/devices-overview.png" alt="Devices Inventory Main View" class="doc-image" loading="lazy">
+          <div class="doc-image-caption">Figure: Devices Inventory Module Interface</div>
+        </div>
+
+        <!-- Section 5.1 -->
+        <section id="total-devices" class="doc-section">
+          <h2 class="section-h2">5.1. Total Devices Widget</h2>
+          <ul>
+            <li><strong>Total Devices:</strong> Aggregate count of all endpoints officially registered within the tenant scope.</li>
+            <li><strong>Online:</strong> Count of endpoints actively sending heartbeat signals and security logs in real time.</li>
+            <li><strong>Offline:</strong> Count of endpoints currently unreachable, powered down, or suffering network disconnects.</li>
+          </ul>
+        </section>
+
+        <!-- Section 5.2 -->
+        <section id="top-os" class="doc-section">
+          <h2 class="section-h2">5.2. Top OS Distribution</h2>
+          <p>
+            Donut and bar charts visualising the distribution of operating systems across your server and workstation fleet (e.g., Ubuntu Linux, Windows Server 2022, Debian, Windows 11, macOS).
+          </p>
+        </section>
+
+        <!-- Section 5.3 -->
+        <section id="device-table" class="doc-section">
+          <h2 class="section-h2">5.3. Device at Risk Widget & Inventory Table</h2>
+          <p>
+            <strong>Device at Risk Widget:</strong> Three summary stat cards tabulating the accumulated count of <em>Critical</em>, <em>High</em>, and <em>Medium</em> alerts across all registered machines.
+          </p>
+
+          <h3 class="section-h3">Inventory Table Columns:</h3>
+          <ul>
+            <li><strong>Agent Name:</strong> Endpoint hostname or machine identification label.</li>
+            <li><strong>Operating System:</strong> Installed platform flavor and kernel/build release.</li>
+            <li><strong>Status:</strong> Live connection health (<em>Online</em> or <em>Offline</em>).</li>
+            <li><strong>Severity Breakdown:</strong> Distribution badges for active alerts on that machine (<em>Critical</em>, <em>High</em>, and <em>Medium</em>).</li>
+            <li><strong>Risk Score:</strong> Individual machine risk rating (0 - 100) alongside category level (<em>Low</em>, <em>Medium</em>, <em>High</em>, <em>Critical</em>).</li>
+            <li><strong>Last Seen:</strong> Timestamp of the most recent telemetry heartbeat received from the agent.</li>
+          </ul>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/devices/filter-devices.png" alt="Device Filters" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Filtering endpoints by agent connection status and operating system</div>
+          </div>
+          <p>
+            <strong>Filter Controls:</strong> Allows isolating endpoints based on operational status (Online/Offline) or specific operating system platforms.
+          </p>
+        </section>
+
+        <!-- Section 5.4 -->
+        <section id="device-detail" class="doc-section">
+          <h2 class="section-h2">5.4. Device Detail Drawer</h2>
+          <p>
+            Clicking on any endpoint row slides out a comprehensive asset drawer detailing:
+          </p>
+
+          <div class="doc-image-container">
+            <img src="assets/images/screenshots/devices/device-detail-drawer.png" alt="Device Detail Drawer" class="doc-image" loading="lazy">
+            <div class="doc-image-caption">Figure: Endpoint detail side-drawer with direct link to filtered alerts</div>
+          </div>
+
+          <ul>
+            <li><strong>Agent Name:</strong> Full hostname identifier.</li>
+            <li><strong>Agent ID & Agent IP:</strong> Two-column grid displaying Wazuh registration ID and host IP address.</li>
+            <li><strong>Status & Last Seen:</strong> Real-time connection badge and most recent observation time.</li>
+            <li><strong>Agent Risk Score:</strong> Computed device risk score value (0 - 100).</li>
+            <li><strong>Operating System:</strong> Complete platform distribution name.</li>
+            <li><strong>System Specifications:</strong> Hardware profile including processor model, total CPU cores, and installed RAM capacity.</li>
+            <li><strong>Installed Agent Metadata:</strong> Wazuh agent binary version, registered server IP, and initial enrollment date.</li>
+            <li><strong>Detected Issues:</strong> Displays up to 5 of the latest unique alert types triggered by the endpoint.</li>
+            <li><strong>"View Incidents for this Agent" Button:</strong> Action button at the drawer base that transitions directly to the <strong>Incidents</strong> module with pre-applied filters isolating alerts for this host.</li>
+          </ul>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="dashboard.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Dashboard
+            </span>
+          </a>
+
+          <a href="incidents.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              Incidents
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#total-devices" class="toc-link active">5.1. Total Devices Widget</a></li>
+          <li><a href="#top-os" class="toc-link">5.2. Top OS Distribution</a></li>
+          <li><a href="#device-table" class="toc-link">5.3. Device at Risk & Inventory</a></li>
+          <li><a href="#device-detail" class="toc-link">5.4. Device Detail Drawer</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. devices, online, hardware)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

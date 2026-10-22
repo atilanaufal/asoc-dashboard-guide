@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Risk Score Formula - ASOC Client Dashboard User Guide</title>
+  <meta name="description" content="Mathematical formulas for calculating Tenant Risk Score, Agent Score, severity weight matrices, and step-by-step simulations.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="header-top">
+      
+      <div class="brand-wrapper">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo/infoguard.png" alt="InfoGuard Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span>ASOC</span>
+            <span class="brand-badge">User Guide</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <button id="searchTriggerBtn" class="search-trigger-btn" aria-label="Search Guide">
+          <div class="search-trigger-left">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search guide topics...</span>
+          </div>
+          <kbd class="kbd-shortcut">Ctrl K</kbd>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Subnav Tabs: Only Guides -->
+    <div class="header-subnav">
+      <nav class="subnav-tabs" aria-label="Sub navigation">
+        <span class="subnav-tab active">Guides</span>
+      </nav>
+
+      <div class="breadcrumb-trail">
+        <span>ASOC</span>
+        <span>/</span>
+        <span>User Guide</span>
+        <span>/</span>
+        <span style="color: var(--color-text-main); font-weight: 500;">Risk Score Formula</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+  <div class="layout-container">
+    
+    <!-- Left Navigation Sidebar: No Numbers -->
+    <aside id="sidebarLeft" class="sidebar-left" aria-label="Documentation Navigation">
+      <div class="nav-group">
+        <div class="nav-group-title">Get Started</div>
+        <ul class="nav-items">
+          <li>
+            <a href="index.html" class="nav-link">
+              <span>Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a href="authentication.html" class="nav-link">
+              <span>Authentication & Security</span>
+            </a>
+          </li>
+          <li>
+            <a href="header.html" class="nav-link">
+              <span>Header</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Dashboard Modules</div>
+        <ul class="nav-items">
+          <li>
+            <a href="dashboard.html" class="nav-link">
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="devices.html" class="nav-link">
+              <span>Devices</span>
+            </a>
+          </li>
+          <li>
+            <a href="incidents.html" class="nav-link">
+              <span>Incidents</span>
+            </a>
+          </li>
+          <li>
+            <a href="vulnerabilities.html" class="nav-link">
+              <span>Vulnerabilities</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="nav-link">
+              <span>Reports</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Calculation & FAQ</div>
+        <ul class="nav-items">
+          <li>
+            <a href="risk-score-formula.html" class="nav-link active">
+              <span>Risk Score Formula</span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="nav-link">
+              <span>FAQ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-inner">
+
+        <div class="content-category">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          Mathematical Formulation
+        </div>
+
+        <h1 class="page-title">Risk Score Calculation & Formulas</h1>
+        <p class="lead-paragraph">
+          This section details the mathematical modeling governing the <strong>Risk Score</strong> metric across the ASOC Client Dashboard, detailing individual machine weighting through to the aggregated institutional exposure score.
+        </p>
+
+        <!-- Section 1 -->
+        <section id="tenant-risk-score" class="doc-section">
+          <h2 class="section-h2">1). Tenant Risk Score Formula</h2>
+          <p>
+            The overall Tenant Risk Score represents the normalized average of the accumulated risk values across all monitored endpoint agents registered under that tenant:
+          </p>
+
+          <div class="formula-box">
+            <span>Tenant Risk Score = (AS₁ + AS₂ + ... + ASₙ) / Total Registered Agents</span>
+          </div>
+
+          <ul>
+            <li>Where <code>AS₁, AS₂, ... ASₙ</code> denotes the computed individual risk rating for each endpoint (<em>Agent Score</em>).</li>
+            <li><code>Total Registered Agents</code> is the aggregate count of all Wazuh agents provisioned under the tenant (encompassing both online and offline machines).</li>
+          </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="agent-score" class="doc-section">
+          <h2 class="section-h2">2). Device / Agent Score (AS) Formula</h2>
+          <p>
+            Each individual machine is evaluated based on the accumulated severity weights of all security alerts detected on that endpoint throughout the active observation interval:
+          </p>
+
+          <div class="formula-box">
+            <span>Agent Score (AS) = Min( 100, &Sigma; (Severity Weight &times; Alert Count) )</span>
+          </div>
+
+          <ul>
+            <li>The maximum Agent Score is constrained at an upper ceiling of <strong>100</strong> (<em>capped at 100</em>).</li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="severity-matrix" class="doc-section">
+          <h2 class="section-h2">3). Severity Weight Matrix</h2>
+          <p>
+            Incident weighting maps directly to Wazuh SIEM rule severity levels:
+          </p>
+
+          <div class="table-wrapper">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Wazuh Rule Level</th>
+                  <th>Severity Tier</th>
+                  <th>Score Weight</th>
+                  <th>Representative Attack Samples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Level 15+</strong></td>
+                  <td><span class="badge-severity badge-critical">Critical</span></td>
+                  <td><strong>+6</strong></td>
+                  <td>Ransomware Encryption, EICAR Malware, Web Defacement, Rootkit Execution</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 12 - 14</strong></td>
+                  <td><span class="badge-severity badge-high">High</span></td>
+                  <td><strong>+3</strong></td>
+                  <td>Successful SSH Brute Force, SQL Injection, Unauthorized Privilege Escalation</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 7 - 11</strong></td>
+                  <td><span class="badge-severity badge-medium">Medium</span></td>
+                  <td><strong>+1</strong></td>
+                  <td>Repeated Failed Logins, Nmap Port Scanning, Suspicious Binary Download</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="risk-classification" class="doc-section">
+          <h2 class="section-h2">4). Risk Level Category Classification</h2>
+          <p>
+            The calculated Tenant Risk Score maps into 5 distinct operational risk tiers:
+          </p>
+
+          <div class="table-wrapper">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Score Range</th>
+                  <th>Risk Category</th>
+                  <th>Color Indicator</th>
+                  <th>Operational Significance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>0 - 20</strong></td>
+                  <td><span class="badge-severity badge-low">Low</span></td>
+                  <td>Green</td>
+                  <td>Infrastructure secure and stable. Only routine, minor anomalies detected.</td>
+                </tr>
+                <tr>
+                  <td><strong>21 - 40</strong></td>
+                  <td><span class="badge-severity badge-high" style="background:#fff7ed; color:#c2410c;">Moderate</span></td>
+                  <td>Orange</td>
+                  <td>Isolated recurring suspicious activities requiring monitoring.</td>
+                </tr>
+                <tr>
+                  <td><strong>41 - 60</strong></td>
+                  <td><span class="badge-severity badge-high">Elevated</span></td>
+                  <td>Dark Orange</td>
+                  <td>Targeted attack campaigns detected against key network hosts.</td>
+                </tr>
+                <tr>
+                  <td><strong>61 - 80</strong></td>
+                  <td><span class="badge-severity badge-critical">High</span></td>
+                  <td>Red</td>
+                  <td>Active high-severity cyber threats actively underway.</td>
+                </tr>
+                <tr>
+                  <td><strong>81 - 100</strong></td>
+                  <td><span class="badge-severity badge-critical" style="background:#7f1d1d; color:#ffffff;">Critical</span></td>
+                  <td>Dark Red</td>
+                  <td>Emergency security condition. Widespread attack or critical asset compromise.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="simulation" class="doc-section">
+          <h2 class="section-h2">5). Step-by-Step Calculation Simulation</h2>
+          <p>
+            Consider an institution monitoring <strong>4 registered endpoint agents</strong>:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Host A (Academic Database Server):</strong> Triggers 5 Critical alerts (5 &times; 6 = 30), 10 High alerts (10 &times; 3 = 30), and 15 Medium alerts (15 &times; 1 = 15).<br>
+              Accumulation AS(A) = 30 + 30 + 15 = <strong>75</strong> (Classification: <em>High</em>).
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>Host B (Public Web Portal):</strong> Experiences aggressive brute force with 20 Critical alerts (20 &times; 6 = 120).<br>
+              Accumulation AS(B) = min(100, 120) = <strong>100</strong> (Capped at maximum ceiling 100, Classification: <em>Critical</em>).
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>Host C (Library Catalog Host):</strong> Triggers 5 Medium alerts (5 &times; 1 = 5).<br>
+              Accumulation AS(C) = <strong>5</strong> (Classification: <em>Low</em>).
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>Host D (Staff Workstation):</strong> Clean baseline with no detected alerts.<br>
+              Accumulation AS(D) = <strong>0</strong> (Classification: <em>Low</em>).
+            </li>
+          </ul>
+
+          <div class="callout callout-success">
+            <div class="callout-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="callout-body">
+              <p><strong>Final Tenant Score Computation:</strong></p>
+              <div class="formula-box" style="margin: 0.5rem 0; font-size: 0.9rem;">
+                Total Agent Score = 75 + 100 + 5 + 0 = 180<br>
+                Tenant Risk Score = 180 / 4 = 45.0
+              </div>
+              <p style="margin-top: 0.4rem; font-size: 0.88rem;">
+                The resulting institutional risk score evaluates to <strong>45.0</strong>, classifying the environment under the <strong>Elevated</strong> risk tier. This informs administrators that immediate remediation should focus heavily on Host A and Host B.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="doc-pagination">
+          <a href="reports.html" class="pagination-link">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Reports
+            </span>
+          </a>
+
+          <a href="faq.html" class="pagination-link pagination-next">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">
+              FAQ
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Right Sidebar: On this page (Only sub-sections of this page!) -->
+    <aside class="sidebar-right" aria-label="On this page navigation">
+      <div class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="21" y1="10" x2="7" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="7" y2="18"></line>
+        </svg>
+        <span>On this page</span>
+      </div>
+
+      <nav>
+        <ul class="toc-list">
+          <li><a href="#tenant-risk-score" class="toc-link active">1. Tenant Risk Score Formula</a></li>
+          <li><a href="#agent-score" class="toc-link">2. Agent Score (AS) Formula</a></li>
+          <li><a href="#severity-matrix" class="toc-link">3. Severity Weight Matrix</a></li>
+          <li><a href="#risk-classification" class="toc-link">4. Risk Classification</a></li>
+          <li><a href="#simulation" class="toc-link">5. Step-by-Step Simulation</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal Dialog -->
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-dialog-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search guide topics... (e.g. formula, wazuh level, weights)" autocomplete="off">
+      <button id="searchDialogClose" class="search-dialog-close">ESC</button>
+    </div>
+    <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
